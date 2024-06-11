@@ -1,7 +1,7 @@
 # integration_test.py
 import pytest
 
-# Example functions to be tested
+
 def add(x, y):
     return x + y
 
@@ -16,7 +16,7 @@ def divide(x, y):
         raise ValueError("Cannot divide by zero")
     return x / y
 
-# Test cases
+
 def test_add():
     assert add(3, 4) == 7
 

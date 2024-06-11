@@ -1,33 +1,30 @@
-# import addition
-# import multiplication
-import calculator
-def test_integration():
-    # Test multiplying the result of adding two numbers with another number
-    assert calculator.multiply(calculator.add(2, 3), 4) == 20
+# integration_test.py
+import pytest
 
+# Example functions to be tested
+def add(x, y):
+    return x + y
 
+def subtract(x, y):
+    return x - y
 
-## Unit testing
+def multiply(x, y):
+    return x * y
 
-# def test_addition():
-#     assert calculator.add(2, 3) == 5
-#
-# def test_subtraction():
-#     assert calculator.subtract(5, 3) == 2
-#
-# def test_multiplication():
-#     assert calculator.multiply(2, 3) == 6
-#
-# def test_division():
-#     assert calculator.divide(6, 3) == 2
-#
-# def test_divide_by_zero():
-#     try:
-#         calculator.divide(6, 0)
-#     except ValueError as e:
-#         assert str(e) == "Cannot divide by zero"
-#     else:
-#         assert False, "Expected ValueError"
-#
-#
-#
+def divide(x, y):
+    if y == 0:
+        raise ValueError("Cannot divide by zero")
+    return x / y
+
+# Test cases
+def test_add():
+    assert add(3, 4) == 7  # This test should pass
+
+def test_subtract():
+    assert subtract(10, 5) == 5  # This test should pass
+
+def test_multiply():
+    assert multiply(2, 3) == 7  # This test should fail (intentionally incorrect)
+
+def test_divide():
+    assert divide(10, 2) == 6  # This test should fail (intentionally incorrect)
